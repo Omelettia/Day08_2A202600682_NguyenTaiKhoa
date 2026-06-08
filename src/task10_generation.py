@@ -73,8 +73,15 @@ def format_context(chunks: list[dict]) -> str:
     return "\n\n---\n\n".join(context_parts)
 
 
-def _build_prompt(query: str, context: str) -> str:
-    return f"{SYSTEM_PROMPT}\n\nContext:\n{context}\n\nQuestion: {query}"
+def _build_prompt(query: str, context: str, conversation_context: str | None = None) -> str:
+    history_block = ""
+    if conversation_context:
+        history_block = (
+            "\n\nConversation context for resolving follow-up wording only. "
+            "Do not cite this conversation as evidence:\n"
+            f"{conversation_context}"
+        )
+    return f"{SYSTEM_PROMPT}{history_block}\n\nContext:\n{context}\n\nQuestion: {query}"
 
 
 def _generate_with_gemini(prompt: str) -> str | None:
@@ -135,18 +142,30 @@ def _extractive_answer(query: str, chunks: list[dict]) -> str:
     return intro + "\n\n" + "\n\n".join(sentences)
 
 
-def generate_with_citation(query: str, top_k: int = TOP_K) -> dict:
+def generate_with_citation(
+    query: str,
+    top_k: int = TOP_K,
+    score_threshold: float | None = None,
+    use_reranking: bool = True,
+    use_llm: bool = True,
+    conversation_context: str | None = None,
+) -> dict:
     """
     End-to-end RAG generation with citations.
     """
-    chunks = retrieve(query, top_k=top_k)
+    retrieve_kwargs = {"top_k": top_k, "use_reranking": use_reranking}
+    if score_threshold is not None:
+        retrieve_kwargs["score_threshold"] = score_threshold
+    chunks = retrieve(query, **retrieve_kwargs)
     reordered = reorder_for_llm(chunks)
     context = format_context(reordered)
-    prompt = _build_prompt(query, context)
+    prompt = _build_prompt(query, context, conversation_context)
 
-    answer = _generate_with_gemini(prompt)
-    if not answer:
-        answer = _generate_with_openai(prompt)
+    answer = None
+    if use_llm:
+        answer = _generate_with_gemini(prompt)
+        if not answer:
+            answer = _generate_with_openai(prompt)
     if not answer:
         answer = _extractive_answer(query, reordered)
 

@@ -1,17 +1,98 @@
 [
   {
-    "question": "Hình phạt cho tội tàng trữ trái phép chất ma tuý theo Điều 249 Bộ luật Hình sự?",
-    "expected_answer": "Phạt tù từ 1 đến 5 năm đối với trường hợp tàng trữ từ 1g đến dưới 5g heroin hoặc cocaine, hoặc chất ma tuý khác với khối lượng tương đương.",
-    "expected_context": "Bộ luật Hình sự 2015, Điều 249"
+    "question": "Luật Phòng, chống ma túy 2021 quy định phạm vi điều chỉnh những nội dung nào?",
+    "expected_answer": "Luật quy định về phòng, chống ma túy; quản lý người sử dụng trái phép chất ma túy; cai nghiện ma túy; và trách nhiệm của cá nhân, gia đình, cơ quan, tổ chức trong phòng, chống ma túy.",
+    "expected_context": "73_2021_QH14_445185.md",
+    "category": "legal"
   },
   {
-    "question": "Luật Phòng chống ma tuý 2021 quy định những hình thức cai nghiện nào?",
-    "expected_answer": "Cai nghiện tự nguyện tại gia đình, cai nghiện tự nguyện tại cộng đồng, cai nghiện tự nguyện tại cơ sở cai nghiện, và cai nghiện bắt buộc tại cơ sở cai nghiện.",
-    "expected_context": "Luật Phòng chống ma tuý 2021, Chương V"
+    "question": "Luật Phòng, chống ma túy 2021 định nghĩa chất ma túy như thế nào?",
+    "expected_answer": "Chất ma túy là chất gây nghiện hoặc chất hướng thần được quy định trong danh mục chất ma túy do Chính phủ ban hành.",
+    "expected_context": "73_2021_QH14_445185.md",
+    "category": "legal"
   },
   {
-    "question": "Danh mục các chất ma tuý thuộc nhóm I theo quy định pháp luật Việt Nam gồm những chất nào?",
-    "expected_answer": "Nhóm I gồm các chất ma tuý tuyệt đối cấm sử dụng trong y học và đời sống, bao gồm heroin, cocaine, methamphetamine, MDMA (ecstasy), cannabis (cần sa), và các chất tương tự.",
-    "expected_context": "Nghị định 57/2022/NĐ-CP, Phụ lục I"
+    "question": "Luật Phòng, chống ma túy 2021 quy định những hình thức cai nghiện ma túy nào?",
+    "expected_answer": "Các hình thức gồm cai nghiện ma túy tự nguyện và cai nghiện ma túy bắt buộc, được thực hiện tại gia đình, cộng đồng hoặc cơ sở cai nghiện theo điều kiện luật định.",
+    "expected_context": "73_2021_QH14_445185.md",
+    "category": "legal"
+  },
+  {
+    "question": "Nghị định 105/2021/NĐ-CP hướng dẫn văn bản pháp luật nào?",
+    "expected_answer": "Nghị định 105/2021/NĐ-CP quy định chi tiết và hướng dẫn thi hành một số điều của Luật Phòng, chống ma túy.",
+    "expected_context": "105_2021_ND-CP_496664.md",
+    "category": "legal"
+  },
+  {
+    "question": "Nghị định 28/2026/NĐ-CP quy định nội dung gì?",
+    "expected_answer": "Nghị định 28/2026/NĐ-CP quy định các danh mục chất ma túy và tiền chất.",
+    "expected_context": "28_2026_ND-CP_690473.md",
+    "category": "legal"
+  },
+  {
+    "question": "Văn bản nào trong corpus quy định danh mục chất ma túy và tiền chất?",
+    "expected_answer": "Văn bản quy định danh mục chất ma túy và tiền chất là Nghị định 28/2026/NĐ-CP.",
+    "expected_context": "28_2026_ND-CP_690473.md",
+    "category": "legal"
+  },
+  {
+    "question": "Ca sĩ Chi Dân liên quan đến vụ việc ma túy nào theo các bài báo đã crawl?",
+    "expected_answer": "Các bài báo nêu việc ca sĩ Chi Dân liên quan đến hành vi tổ chức hoặc rủ nhiều người sử dụng trái phép chất ma túy trong quá trình cơ quan chức năng mở rộng điều tra.",
+    "expected_context": "01_chi_dan.md; 06_andrea_aybar.md",
+    "category": "news"
+  },
+  {
+    "question": "Ca sĩ Chu Bin bị tạm giữ trong bối cảnh nào?",
+    "expected_answer": "Ca sĩ Chu Bin bị tạm giữ vì liên quan đến ma túy sau khi cơ quan chức năng kiểm tra một căn hộ và phát hiện nhóm người có dấu hiệu sử dụng chất cấm.",
+    "expected_context": "02_chu_bin.md",
+    "category": "news"
+  },
+  {
+    "question": "Diễn viên Hữu Tín bị đề nghị truy tố về hành vi gì?",
+    "expected_answer": "Diễn viên Hữu Tín bị đề nghị truy tố về hành vi tổ chức sử dụng trái phép chất ma túy.",
+    "expected_context": "03_huu_tin.md",
+    "category": "news"
+  },
+  {
+    "question": "Diễn viên Lệ Hằng bị điều tra về hành vi gì?",
+    "expected_answer": "Diễn viên Lệ Hằng bị điều tra về hành vi mua bán trái phép chất ma túy.",
+    "expected_context": "04_le_hang.md",
+    "category": "news"
+  },
+  {
+    "question": "Nhikolai Đinh bị bắt trong vụ án liên quan đến những hành vi ma túy nào?",
+    "expected_answer": "Bài báo nêu Nhikolai Đinh bị bắt trong vụ án liên quan đến mua bán và tàng trữ trái phép chất ma túy.",
+    "expected_context": "05_nhikolai_dinh.md",
+    "category": "news"
+  },
+  {
+    "question": "Andrea Aybar bị điều tra về những hành vi nào theo bài báo?",
+    "expected_answer": "Andrea Aybar bị điều tra về hành vi tàng trữ trái phép chất ma túy và tổ chức sử dụng trái phép chất ma túy.",
+    "expected_context": "06_andrea_aybar.md",
+    "category": "news"
+  },
+  {
+    "question": "Rapper Bình Gold bị phát hiện liên quan đến ma túy trong tình huống nào?",
+    "expected_answer": "Bình Gold bị phát hiện dương tính với ma túy khi liên quan đến một vụ việc lái xe trên cao tốc.",
+    "expected_context": "07_binh_gold.md",
+    "category": "news"
+  },
+  {
+    "question": "Các bài báo trong corpus nêu những dạng hành vi ma túy nào liên quan đến nghệ sĩ?",
+    "expected_answer": "Các bài báo nêu nhiều dạng hành vi như sử dụng trái phép chất ma túy, tổ chức sử dụng trái phép chất ma túy, tàng trữ trái phép chất ma túy và mua bán trái phép chất ma túy.",
+    "expected_context": "01_chi_dan.md; 03_huu_tin.md; 04_le_hang.md; 06_andrea_aybar.md",
+    "category": "mixed"
+  },
+  {
+    "question": "Pipeline cần trích dẫn loại nguồn nào khi trả lời câu hỏi về pháp luật ma túy và tin nghệ sĩ?",
+    "expected_answer": "Pipeline cần trích dẫn văn bản pháp luật trong thư mục legal và các bài báo trong thư mục news, tùy theo nội dung câu hỏi.",
+    "expected_context": "data/standardized/legal; data/standardized/news",
+    "category": "mixed"
+  },
+  {
+    "question": "Nếu câu hỏi yêu cầu thông tin không có trong corpus thì hệ thống nên trả lời thế nào?",
+    "expected_answer": "Hệ thống nên nói rằng không thể xác minh thông tin từ nguồn hiện có thay vì suy đoán.",
+    "expected_context": "SYSTEM_PROMPT; task10_generation.py",
+    "category": "safety"
   }
 ]

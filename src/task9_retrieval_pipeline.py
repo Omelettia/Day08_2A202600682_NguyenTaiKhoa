@@ -23,6 +23,15 @@ DEFAULT_TOP_K = 5
 RERANK_METHOD = "cross_encoder"
 
 
+def _normalize_scores(results: list[dict]) -> list[dict]:
+    if not results:
+        return results
+    max_score = max(float(r.get("score", 0.0)) for r in results)
+    if max_score <= 0:
+        return results
+    return [{**r, "score": float(r.get("score", 0.0)) / max_score} for r in results]
+
+
 def _mark_source(results: list[dict], source: str) -> list[dict]:
     marked = []
     for result in results:
@@ -46,17 +55,19 @@ def retrieve(
     sparse_results = lexical_search(query, top_k=top_k * 3)
 
     merged = rerank_rrf([dense_results, sparse_results], top_k=top_k * 3)
+    merged = _normalize_scores(merged)
     merged = _mark_source(merged, "hybrid")
 
     if use_reranking and merged:
         final_results = rerank(query, merged, top_k=top_k, method=RERANK_METHOD)
+        final_results = _normalize_scores(final_results)
         final_results = _mark_source(final_results, "hybrid")
     else:
         final_results = merged[:top_k]
 
     if not final_results or float(final_results[0].get("score", 0.0)) < score_threshold:
         fallback = pageindex_search(query, top_k=top_k)
-        return fallback[:top_k]
+        return _normalize_scores(fallback[:top_k])
 
     return final_results[:top_k]
 

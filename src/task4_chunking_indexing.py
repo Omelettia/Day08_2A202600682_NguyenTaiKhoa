@@ -47,6 +47,7 @@ EMBEDDING_DIM = 1024
 
 VECTOR_STORE = "local_json_with_optional_weaviate"
 WEAVIATE_COLLECTION = "DrugLawDocs"
+_SENTENCE_TRANSFORMER_MODEL = None
 
 
 def _doc_type(path: Path) -> str:
@@ -183,10 +184,16 @@ def _sentence_transformer_embeddings(texts: list[str]) -> list[list[float]] | No
     if os.getenv("USE_SENTENCE_TRANSFORMERS", "false").lower() not in {"1", "true", "yes"}:
         return None
     try:
+        global _SENTENCE_TRANSFORMER_MODEL
         from sentence_transformers import SentenceTransformer
 
-        model = SentenceTransformer(EMBEDDING_MODEL)
-        embeddings = model.encode(texts, normalize_embeddings=True, show_progress_bar=False)
+        if _SENTENCE_TRANSFORMER_MODEL is None:
+            _SENTENCE_TRANSFORMER_MODEL = SentenceTransformer(EMBEDDING_MODEL)
+        embeddings = _SENTENCE_TRANSFORMER_MODEL.encode(
+            texts,
+            normalize_embeddings=True,
+            show_progress_bar=False,
+        )
         return [embedding.tolist() for embedding in embeddings]
     except Exception as exc:
         print(f"SentenceTransformer embedding skipped: {exc}")
