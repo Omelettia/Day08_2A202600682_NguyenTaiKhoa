@@ -517,8 +517,18 @@ run_dashboard()
 
 ### Kiến Trúc Hệ Thống
 
-```
-[Vẽ diagram kiến trúc ở đây]
+```mermaid
+flowchart LR
+    A[User Question] --> B[Task 9 Retrieval Pipeline]
+    B --> C[Semantic Search - Task 5]
+    B --> D[BM25 Lexical Search - Task 6]
+    C --> E[RRF Merge + Rerank - Task 7]
+    D --> E
+    E --> F{Score >= Threshold?}
+    F -- Yes --> G[Task 10 Generation + Citation]
+    F -- No --> H[PageIndex Fallback - Task 8]
+    H --> G
+    G --> I[Answer with Citations]
 ```
 
 ---
@@ -527,10 +537,10 @@ run_dashboard()
 
 | Thành viên | MSSV | Nhiệm vụ | Trạng thái |
 |-----------|------|----------|------------|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Nguyễn Thành Đạt | 2A202600944 | Individual RAG pipeline Tasks 1-10 and data preparation | Complete |
+| Mai Văn Thuyên | 2A202600926 | Retrieval integration, reranking, and fallback validation | Complete |
+| Nguyễn Tài Khoa | 2A202600682 | Streamlit chatbot integration and bonus failure probes | Complete |
+| Nguyễn Khởi Lâm | 2A202600607 | Evaluation dataset, A/B evaluation, and final report | Complete |
 
 ---
 
