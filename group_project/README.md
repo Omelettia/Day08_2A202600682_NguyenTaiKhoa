@@ -116,10 +116,10 @@ The code keeps local fallbacks for missing external services.
 
 | Member | MSSV | Responsibility | Status |
 |---|---|---|---|
-| Nguyễn Tài Khoa | 2A202600682 | Individual RAG pipeline Tasks 1-10 | Complete |
-| Nguyễn Tài Khoa | 2A202600682 | Streamlit chatbot integration | Complete |
-| Nguyễn Tài Khoa | 2A202600682 | Evaluation dataset, A/B evaluation, report | Complete |
-| Nguyễn Tài Khoa | 2A202600682 | Bonus failure probes | Complete |
+| Nguyễn Thành Đạt | 2A202600944 | Individual RAG pipeline Tasks 1-10 and data preparation | Complete |
+| Mai Văn Thuyên | 2A202600926 | Retrieval integration, reranking, and fallback validation | Complete |
+| Nguyễn Tài Khoa | 2A202600682 | Streamlit chatbot integration and bonus failure probes | Complete |
+| Nguyễn Khởi Lâm | 2A202600607 | Evaluation dataset, A/B evaluation, and final report | Complete |
 
 ## Validation
 
