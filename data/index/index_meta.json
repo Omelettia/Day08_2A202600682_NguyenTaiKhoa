@@ -1,0 +1,9 @@
+{
+  "chunk_count": 557,
+  "chunk_size": 800,
+  "chunk_overlap": 120,
+  "chunking_method": "recursive",
+  "embedding_model": "AITeamVN/Vietnamese_Embedding",
+  "embedding_dim": 1024,
+  "vector_store": "local_json_with_optional_weaviate"
+}
